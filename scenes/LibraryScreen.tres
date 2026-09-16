@@ -1,0 +1,64 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cns8x5gumkdgm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0710m"]
+bg_color = Color(0.41568628, 0.3647059, 0.63529414, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pyq3s"]
+bg_color = Color(0.61960787, 0.73333335, 0.75686276, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_peg86"]
+bg_color = Color(0.28627452, 0.24705882, 0.45882353, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qcxu"]
+bg_color = Color(0.41568628, 0.3647059, 0.63529414, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5ujh"]
+bg_color = Color(0.61803204, 0.73439574, 0.7562574, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdh2w"]
+bg_color = Color(0.28785378, 0.24570358, 0.4597628, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1b2yh"]
+bg_color = Color(1, 0.7921569, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auj1e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_right = 4
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[resource]
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_0710m")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_pyq3s")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_peg86")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_2qcxu")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_a5ujh")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_rdh2w")
+VScrollBar/styles/normal = SubResource("StyleBoxFlat_1b2yh")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_auj1e")

@@ -1,0 +1,85 @@
+extends Control
+
+
+const SUPABASE_URL = "https://YOUR_PROJECT_ID.supabase.co"
+const SUPABASE_KEY = "YOUR_SUPABASE_ANON_KEY"
+
+@onready var email_field = $EmailField
+@onready var password_field = $PasswordField
+@onready var http = $HTTPRequest
+
+var pending_action := ""  # "login" or "signup"
+
+#func _ready():
+	#$LoginButton.pressed.connect(_on_login)
+	#$SignupButton.pressed.connect(_on_signup)
+	#http.request_completed.connect(_on_request_completed)
+
+# LOGIN
+func _on_login() -> void:
+	pending_action = "login"
+	var url = SUPABASE_URL + "/auth/v1/token?grant_type=password"
+	var headers = [
+		"Content-Type: application/json",
+		"apikey: " + SUPABASE_KEY
+	]
+	var body = {
+		"email": email_field.text,
+		"password": password_field.text
+	}
+	http.request(url, headers, HTTPClient.METHOD_POST, JSON.stringify(body))
+
+
+func _on_signup() -> void:
+	pending_action = "signup"
+	var url = SUPABASE_URL + "/auth/v1/signup"
+	var headers = [
+		"Content-Type: application/json",
+		"apikey: " + SUPABASE_KEY
+	]
+	var body = {
+		"email": email_field.text,
+		"password": password_field.text
+	}
+	http.request(url, headers, HTTPClient.METHOD_POST, JSON.stringify(body))
+
+
+func _on_request_completed(result: int, code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	var data = JSON.parse_string(body.get_string_from_utf8())
+
+	# Check if user needs email confirmation:
+	if data.has("user") and data["user"] == null and not data.has("session"):
+		print("Please check your email. Confirmation link has been sent.")
+		return
+
+	var token: String = ""
+	var user_id: String = ""
+
+	if data.has("access_token"):
+		token = data["access_token"]
+	if data.has("user") and data["user"] != null and data["user"].has("id"):
+		user_id = data["user"]["id"]
+
+	# Session-wrapped response handling
+	if data.has("session"):
+		var session = data["session"]
+		if session.has("access_token"):
+			token = session["access_token"]
+		if session.has("user") and session["user"].has("id"):
+			user_id = session["user"]["id"]
+
+	if token == "" or user_id == "":
+		print("User or token information missing:", data)
+		return
+
+	Globals.auth_token = token
+	Globals.user_id = user_id
+
+	print(pending_action + " successful!")
+	print("User ID:", user_id)
+	print("Token:", token)
+
+
+func _on_acc_button_pressed() -> void:
+	# Create Account button clicked
+	get_tree().change_scene_to_file("res://authscreen_signup.tscn")

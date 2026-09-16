@@ -1,0 +1,372 @@
+[gd_scene load_steps=14 format=3 uid="uid://cfvygcqwkg8yb"]
+
+[ext_resource type="Texture2D" uid="uid://blbtmadk6t0n4" path="res://assets/ui/GUI/Equipment.png" id="1_lochu"]
+[ext_resource type="Texture2D" uid="uid://csepbew64lyh1" path="res://assets/ui/GUI/Settings.png" id="1_obayw"]
+[ext_resource type="Script" uid="uid://07dp3lakufxq" path="res://scenes/UserInterface/AvatarWindow.gd" id="1_oh5fi"]
+[ext_resource type="FontFile" uid="uid://cnu3sa8v30pc0" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_378xl"]
+[ext_resource type="FontFile" uid="uid://b63qvrxir6pmy" path="res://assets/fonts/CherrySwash-Regular.ttf" id="4_xix68"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lochu"]
+atlas = ExtResource("1_lochu")
+region = Rect2(9.835999, 830.7283, 675.2308, 394.42053)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_378xl"]
+atlas = ExtResource("1_obayw")
+region = Rect2(191.61072, 3.9447708, 23.958008, 21.29601)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q31jy"]
+atlas = ExtResource("1_lochu")
+region = Rect2(558.2213, 1379.6436, 21.604248, 36.854126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxtmx"]
+atlas = ExtResource("1_lochu")
+region = Rect2(681.8578, 1381.5, 18.30664, 33.14746)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh5fi"]
+atlas = ExtResource("1_obayw")
+region = Rect2(407.37277, 333.77734, 85.37668, 33.46765)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk04k"]
+atlas = ExtResource("1_obayw")
+region = Rect2(12.490143, 0, 208.12009, 313.95016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfbpj"]
+atlas = ExtResource("1_obayw")
+region = Rect2(191.61072, 3.9447708, 23.958008, 21.29601)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbpkm"]
+atlas = ExtResource("1_obayw")
+region = Rect2(407.37277, 333.77734, 85.37668, 33.46765)
+
+[node name="AvatarWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oh5fi")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -308.5
+offset_top = -199.5
+offset_right = 308.5
+offset_bottom = 199.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_lochu")
+
+[node name="CharacterPreviewHolder" type="Control" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = 52.0
+offset_right = -162.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PreviewSprite" type="AnimatedSprite2D" parent="Background/CharacterPreviewHolder"]
+scale = Vector2(3, 3)
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 250.0
+offset_top = -181.0
+offset_right = 296.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_378xl")
+stretch_mode = 0
+
+[node name="Information" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 270.0
+offset_right = 724.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 14
+text = "Name:
+"
+
+[node name="LevelLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 350.0
+offset_right = 739.0
+offset_bottom = 385.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 14
+text = "Level:"
+
+[node name="XPLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 390.0
+offset_right = 739.0
+offset_bottom = 425.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 14
+text = "XP:
+"
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 771.0
+offset_top = 270.0
+offset_right = 899.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 14
+text = "Bakircay
+"
+
+[node name="Level" type="Label" parent="."]
+layout_mode = 0
+offset_left = 771.0
+offset_top = 350.0
+offset_right = 867.0
+offset_bottom = 385.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 14
+text = "5
+"
+
+[node name="XP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 771.0
+offset_top = 390.0
+offset_right = 867.0
+offset_bottom = 425.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 14
+text = "180"
+
+[node name="BirthdayLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 310.0
+offset_right = 760.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 13
+text = "Birthday:"
+
+[node name="Birthday" type="Label" parent="."]
+layout_mode = 0
+offset_left = 771.0
+offset_top = 310.0
+offset_right = 901.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 13
+text = "10.10.2010"
+
+[node name="BtnNext" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(18, 33)
+layout_mode = 0
+offset_left = 577.0
+offset_top = 370.0
+offset_right = 598.0
+offset_bottom = 406.0
+texture_normal = SubResource("AtlasTexture_q31jy")
+
+[node name="BtnPrev" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(18, 33)
+layout_mode = 0
+offset_left = 368.0
+offset_top = 370.0
+offset_right = 386.0
+offset_bottom = 403.0
+texture_normal = SubResource("AtlasTexture_hxtmx")
+
+[node name="EditButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 473.0
+offset_right = 911.0
+offset_bottom = 521.0
+texture_normal = SubResource("AtlasTexture_oh5fi")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="EditButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -9.5
+offset_right = 32.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+text = "EDIT"
+
+[node name="EditWindow" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -89.0
+offset_right = 238.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Background" type="NinePatchRect" parent="EditWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_hk04k")
+
+[node name="BackgroundBar" type="NinePatchRect" parent="EditWindow/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -104.0
+offset_right = 199.5
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_hk04k")
+region_rect = Rect2(0, 0, 208, 29.389801)
+
+[node name="CloseButton" type="TextureButton" parent="EditWindow/Background"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = -3.0
+offset_right = 389.0
+offset_bottom = 25.0
+texture_normal = SubResource("AtlasTexture_vfbpj")
+stretch_mode = 0
+
+[node name="NameLabel" type="Label" parent="EditWindow"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 64.0
+offset_right = 176.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 14
+text = "New Name:
+"
+
+[node name="SaveButton" type="TextureButton" parent="EditWindow"]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 140.0
+offset_right = 359.0
+offset_bottom = 183.0
+texture_normal = SubResource("AtlasTexture_vbpkm")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="EditWindow/SaveButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -7.5
+offset_right = 37.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 13
+text = "SAVE"
+
+[node name="NewNameLE" type="LineEdit" parent="EditWindow"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 60.0
+offset_right = 357.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("4_xix68")
+theme_override_font_sizes/font_size = 14
+placeholder_text = "Test"
+max_length = 8
+
+[node name="BirthdayLabel" type="Label" parent="EditWindow"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 109.0
+offset_right = 148.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_378xl")
+theme_override_font_sizes/font_size = 13
+text = "Birthday:"
+
+[node name="BirthdayContainer" type="HBoxContainer" parent="EditWindow"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 105.0
+offset_right = 337.0
+offset_bottom = 125.0
+alignment = 1
+
+[node name="Day" type="OptionButton" parent="EditWindow/BirthdayContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xix68")
+
+[node name="Month" type="OptionButton" parent="EditWindow/BirthdayContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_xix68")
+autowrap_mode = 2
+
+[node name="Year" type="OptionButton" parent="EditWindow/BirthdayContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xix68")

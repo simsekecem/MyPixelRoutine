@@ -1,0 +1,200 @@
+[gd_scene load_steps=17 format=3 uid="uid://fr47ehb8faon"]
+
+[ext_resource type="Script" uid="uid://bwtdcuxn10p1g" path="res://scenes/UserInterface/IURoot.gd" id="1_06gou"]
+[ext_resource type="Texture2D" uid="uid://dlm3mtwrkycbc" path="res://assets/ui/GUI/Icons.png" id="1_bng0l"]
+[ext_resource type="Texture2D" uid="uid://c26l5j177qlfd" path="res://assets/ui/GUI/character_panel2.png" id="1_vdak2"]
+[ext_resource type="Texture2D" uid="uid://dkyny56ejfvgy" path="res://assets/ui/GUI/character_panel.png" id="2_m6eke"]
+[ext_resource type="FontFile" uid="uid://da4t1i3tr1hvt" path="res://assets/fonts/CherrySwash-Bold.ttf" id="3_onsxm"]
+[ext_resource type="Texture2D" uid="uid://cib8lw437mjtc" path="res://assets/ui/exp.png" id="5_7kc6w"]
+[ext_resource type="PackedScene" uid="uid://cfvygcqwkg8yb" path="res://scenes/UserInterface/AvatarWindow.tscn" id="5_onsxm"]
+[ext_resource type="PackedScene" uid="uid://dw7ipw30a2pk5" path="res://scenes/UserInterface/SettingsWindow.tscn" id="6_4g11r"]
+[ext_resource type="Texture2D" uid="uid://dik0vhc2fgqpk" path="res://assets/joystick/joystick_base.png" id="7_4g11r"]
+[ext_resource type="PackedScene" uid="uid://dib3gl0v0vrfs" path="res://scenes/UserInterface/MissionsWindow.tscn" id="7_olpf3"]
+[ext_resource type="Texture2D" uid="uid://wpytollh2xvl" path="res://assets/joystick/joystick_handle.png" id="8_rbwta"]
+[ext_resource type="Script" uid="uid://cpgphqx4g77j8" path="res://scenes/UserInterface/Joystick.gd" id="9_es0yp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g11r"]
+atlas = ExtResource("2_m6eke")
+region = Rect2(116.992256, 132.01564, 24.724907, 24.724915)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06gou"]
+atlas = ExtResource("1_bng0l")
+region = Rect2(100.479996, 7.614609, 39.819687, 36.814423)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdak2"]
+atlas = ExtResource("1_bng0l")
+region = Rect2(242.49374, 146.5428, 43.923035, 45.25403)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6eke"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="UIRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_06gou")
+
+[node name="TopLeftButtons" type="HBoxContainer" parent="UIRoot"]
+layout_mode = 1
+offset_right = 315.0
+offset_bottom = 127.0
+mouse_filter = 2
+alignment = 1
+
+[node name="Frame" type="TextureRect" parent="UIRoot/TopLeftButtons"]
+custom_minimum_size = Vector2(350, 30)
+layout_direction = 1
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_vdak2")
+expand_mode = 1
+
+[node name="AvatarIcon" type="TextureButton" parent="UIRoot/TopLeftButtons/Frame"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 21.0
+offset_right = 108.0
+offset_bottom = 113.0
+texture_normal = SubResource("AtlasTexture_4g11r")
+
+[node name="XPBar" type="TextureProgressBar" parent="UIRoot/TopLeftButtons/Frame"]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.499985
+offset_top = -25.0
+offset_right = -24.49997
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+value = 100.0
+texture_progress = ExtResource("5_7kc6w")
+
+[node name="UsernameText" type="Label" parent="UIRoot/TopLeftButtons/Frame"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 58.0
+offset_right = 233.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("3_onsxm")
+theme_override_font_sizes/font_size = 22
+text = "Username
+"
+
+[node name="TopRightButtons" type="HBoxContainer" parent="UIRoot"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -224.0
+offset_bottom = 50.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="MissionsButton" type="TextureButton" parent="UIRoot/TopRightButtons"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_06gou")
+stretch_mode = 5
+
+[node name="SettingsButton" type="TextureButton" parent="UIRoot/TopRightButtons"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_vdak2")
+texture_pressed = SubResource("AtlasTexture_m6eke")
+stretch_mode = 5
+
+[node name="Windows" type="Control" parent="UIRoot"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AvatarWindow" parent="UIRoot/Windows" instance=ExtResource("5_onsxm")]
+visible = false
+top_level = true
+z_index = 20
+layout_mode = 1
+mouse_filter = 2
+
+[node name="SettingsWindow" parent="UIRoot/Windows" instance=ExtResource("6_4g11r")]
+visible = false
+top_level = true
+z_index = 20
+layout_mode = 1
+mouse_filter = 2
+
+[node name="MissionsWindow" parent="UIRoot/Windows" instance=ExtResource("7_olpf3")]
+visible = false
+top_level = true
+z_index = 20
+layout_mode = 1
+mouse_filter = 2
+
+[node name="Joystick" type="Control" parent="UIRoot"]
+custom_minimum_size = Vector2(220, 220)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -231.0
+offset_top = -241.0
+offset_right = -11.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_force_pass_scroll_events = false
+script = ExtResource("9_es0yp")
+
+[node name="BG" type="TextureRect" parent="UIRoot/Joystick"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -110.0
+offset_right = 110.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_4g11r")
+expand_mode = 1
+
+[node name="Handle" type="TextureRect" parent="UIRoot/Joystick"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_rbwta")
+expand_mode = 1
