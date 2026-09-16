@@ -42,13 +42,13 @@ Experience the game directly in your web browser on **itch.io** or download the 
   <a href="https://reallifesim.itch.io/mypixelroutine" target="_blank">
     <img src="https://img.shields.io/badge/Play%20on-itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white" alt="Play on itch.io" />
   </a>
-  <a href="https://github.com/">
+  <a href="https://github.com/simsekecem/MyPixelRoutine/releases/latest">
     <img src="https://img.shields.io/badge/Download-Android%20APK-brightgreen?style=for-the-badge&logo=android" alt="Download APK" />
   </a>
 </p>
 
 - **Web (Browser):** Play instantly on [itch.io (Real Life Simulation)](https://reallifesim.itch.io/mypixelroutine) without installing anything!
-- **Android (Mobile):** Download the latest standalone `.apk` from the [Releases](https://github.com/) section.
+- **Android (Mobile):** Download the latest standalone `.apk` from the [Releases](https://github.com/simsekecem/MyPixelRoutine/releases/latest) section.
 
 > **Android Installation Note:** Since this is an indie build, your Android device may prompt *"Install unknown app"*. Enable the permission to proceed with installation.
 
