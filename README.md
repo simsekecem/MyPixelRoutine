@@ -32,6 +32,11 @@ Transform your daily habits, study routines, workouts, meal plans, and wardrobe 
   <img src="screenshots/mc.png" alt="Inventory & Character Stats" width="48%" />
 </p>
 
+<p align="center">
+  <img src="screenshots/closet1.png" alt="Wardrobe & Smart Closet View 1" width="48%" />
+  <img src="screenshots/closet2.png" alt="Wardrobe & Smart Closet View 2" width="48%" />
+</p>
+
 ---
 
 ## Play Online & Download
