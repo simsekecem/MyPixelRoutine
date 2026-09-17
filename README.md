@@ -2,7 +2,7 @@
 <table align="center" style="border-collapse: collapse; border: none; background: transparent;">
   <tr style="border: none; background: transparent;">
     <td style="border: none; background: transparent; vertical-align: middle; text-align: right; padding-right: 15px;">
-      <h1 style="margin: 0; font-size: 2.2em; border: none;">✨ My Pixel Life (Real Life Simulation RPG) ✨</h1>
+      <h1 style="margin: 0; font-size: 2.2em; border: none;">✨ My Pixel Routine (Real Life Simulation RPG) ✨</h1>
     </td>
     <td style="border: none; background: transparent; vertical-align: middle; text-align: left;">
       <img src="https://github.com/user-attachments/assets/faaae912-6ca3-4cdb-b187-cf1286a7e4f0" width="100" alt="Rook Mascot" style="image-rendering: pixelated; display: block;" />
