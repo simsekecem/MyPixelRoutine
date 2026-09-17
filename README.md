@@ -1,3 +1,4 @@
+
 <table align="center" style="border-collapse: collapse; border: none; background: transparent;">
   <tr style="border: none; background: transparent;">
     <td style="border: none; background: transparent; vertical-align: middle; text-align: right; padding-right: 15px;">
@@ -36,6 +37,11 @@ Transform your daily habits, study routines, workouts, meal plans, and wardrobe 
   <img src="screenshots/closet1.png" alt="Wardrobe & Smart Closet View 1" width="48%" />
   <img src="screenshots/closet2.png" alt="Wardrobe & Smart Closet View 2" width="48%" />
 </p>
+
+
+
+https://github.com/user-attachments/assets/a9403d59-ea7f-40ff-9c92-a09d99bb3c93
+
 
 ---
 
