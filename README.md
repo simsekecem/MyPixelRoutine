@@ -40,7 +40,11 @@ Transform your daily habits, study routines, workouts, meal plans, and wardrobe 
 
 
 
-https://github.com/user-attachments/assets/a9403d59-ea7f-40ff-9c92-a09d99bb3c93
+
+
+https://github.com/user-attachments/assets/230a97e0-638b-49b0-9456-2d2241bb3a1a
+
+
 
 
 ---
