@@ -110,6 +110,8 @@ Experience the game directly in your web browser on **itch.io** or download the 
 - **Computer Vision:** [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) (ResNet-50 for clothing classification via Cloudflare Workers AI)
 - **Auth & Storage:** [Supabase](https://supabase.com/) (User Auth & Wardrobe Image Storage)
 - **Notifications:** [Firebase Cloud Messaging (FCM)](https://firebase.google.com/docs/cloud-messaging)
+> [!NOTE]  
+> The clothing classification system was initially implemented using a Vision Transformer (ViT)-based approach. Due to model availability and deployment considerations in Cloudflare Workers AI, the implementation was later migrated to ResNet-50. The current implementation uses ResNet-50 through Cloudflare Workers AI; some legacy endpoint naming may still reference the earlier ViT implementation.
 
 ---
 
