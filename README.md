@@ -107,7 +107,7 @@ Experience the game directly in your web browser on **itch.io** or download the 
 - **Backend:** [Cloudflare Workers](https://workers.cloudflare.com/) (Serverless REST API)
 - **Database:** [Cloudflare D1](https://developers.cloudflare.com/d1/) (Edge SQLite)
 - **Generative AI:** [Google Gemini 2.5 Flash](https://ai.google.dev/) (Daily Quests, AI Coaches, Outfit Generator)
-- **Computer Vision:** [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) (Vision Transformer / ViT for clothing classification)
+- **Computer Vision:** [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) (ResNet-50 for clothing classification via Cloudflare Workers AI)
 - **Auth & Storage:** [Supabase](https://supabase.com/) (User Auth & Wardrobe Image Storage)
 - **Notifications:** [Firebase Cloud Messaging (FCM)](https://firebase.google.com/docs/cloud-messaging)
 
