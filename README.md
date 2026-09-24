@@ -88,9 +88,11 @@ Experience the game directly in your web browser on **itch.io** or download the 
 - Consult the **AI Dietitian** for nutritional guidance and recipe suggestions.
 
 ### Smart Wardrobe & AI Stylist
-- Snap or upload photos of real clothes to your virtual wardrobe.
-- **Zero-Shot Vision AI (ViT):** Automatically recognizes clothing types (*upper, lower, dress, etc.*) and dominant colors.
-- **Magic Button (AI Stylist):** Uses Gemini to generate personalized outfit recommendations from your virtual closet.
+- Upload photos of real clothes to your virtual wardrobe.
+- **Computer Vision:** Initially fine-tuned the pretrained `google/vit-base-patch16-224` Vision Transformer (ViT) for clothing classification, achieving 89.65% validation accuracy. [Fine-tuned model on Hugging Face](https://huggingface.co/yuyuru13/fashion-article-classifier)
+- **Production Classification:** Later migrated the clothing-classification pipeline to **ResNet-50 via Cloudflare Workers AI** due to model support and deployment limitations, with confidence validation and clothing-category mapping.
+- **Dominant Color Detection:** Analyzes uploaded images locally to detect their dominant color and combines it with the clothing classification results.
+- **Magic Button (AI Stylist):** Uses Gemini to generate personalized outfit recommendations based on the user's virtual wardrobe and context.
 
 ### Quests & Character Evolution
 - **Static & Dynamic Quests:** Fresh daily challenges generated every morning via Gemini.
@@ -107,11 +109,11 @@ Experience the game directly in your web browser on **itch.io** or download the 
 - **Backend:** [Cloudflare Workers](https://workers.cloudflare.com/) (Serverless REST API)
 - **Database:** [Cloudflare D1](https://developers.cloudflare.com/d1/) (Edge SQLite)
 - **Generative AI:** [Google Gemini 2.5 Flash](https://ai.google.dev/) (Daily Quests, AI Coaches, Outfit Generator)
-- **Computer Vision:** [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) (ResNet-50 for clothing classification via Cloudflare Workers AI)
+- **Computer Vision:** [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) (ResNet-50 for clothing classification)
 - **Auth & Storage:** [Supabase](https://supabase.com/) (User Auth & Wardrobe Image Storage)
 - **Notifications:** [Firebase Cloud Messaging (FCM)](https://firebase.google.com/docs/cloud-messaging)
-> [!NOTE]  
-> The clothing classification system was initially implemented using a Vision Transformer (ViT)-based approach. Due to model availability and deployment considerations in Cloudflare Workers AI, the implementation was later migrated to ResNet-50. The current implementation uses ResNet-50 through Cloudflare Workers AI; some legacy endpoint naming may still reference the earlier ViT implementation.
+> [!NOTE]
+> The clothing classification system was initially developed by fine-tuning the pretrained `google/vit-base-patch16-224` Vision Transformer (ViT) model on a fashion/clothing dataset, achieving 89.65% validation accuracy. The production implementation was later migrated to ResNet-50 through Cloudflare Workers AI due to model support and deployment limitations. Some legacy endpoint naming may still reference the earlier ViT implementation.
 
 ---
 
